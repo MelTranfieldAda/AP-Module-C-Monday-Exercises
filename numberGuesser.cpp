@@ -31,6 +31,12 @@ int main() {
 
     cout << "What's your guess? \n";
     cin >> guess;
+    
+    if(cin.fail()) {
+      cin.clear();
+      cin.ignore(numeric_limits<streamsize>::max(),'\n');
+      guess = -1;
+    }
 
     int count = 1;
 
